@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinz Store - Linktree</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #1a1a2e;
+            --card-color: rgba(22, 22, 40, 0.6);
+            --primary-text: #ffffff;
+            --secondary-text: #e0e0e0;
+            --accent-color: #7f5af0;
+            --glow-color: rgba(127, 90, 240, 0.5);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #2e4a62);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--primary-text);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .linktree-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            background: var(--card-color);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            box-shadow: 0 0 20px var(--glow-color);
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary-text);
+        }
+
+        .profile-desc {
+            font-size: 0.9em;
+            font-weight: 300;
+            margin: 5px 0 30px 0;
+            color: var(--secondary-text);
+        }
+
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-button {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--primary-text);
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Animasi untuk setiap tombol agar muncul berurutan */
+        .link-button:nth-child(1) { animation-delay: 0.2s; }
+        .link-button:nth-child(2) { animation-delay: 0.3s; }
+        .link-button:nth-child(3) { animation-delay: 0.4s; }
+        .link-button:nth-child(4) { animation-delay: 0.5s; }
+        .link-button:nth-child(5) { animation-delay: 0.6s; }
+        .link-button:nth-child(6) { animation-delay: 0.7s; }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .link-button:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-color);
+            box-shadow: 0 0 25px var(--glow-color);
+        }
+
+        .link-button i {
+            font-size: 1.2em;
+        }
+        
+        .section-title {
+            text-align: left;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 0.9em;
+            color: var(--secondary-text);
+            padding-left: 5px;
+        }
+
+        .socials {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-icon {
+            font-size: 1.8em;
+            color: var(--secondary-text);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="linktree-container" id="tilt-card">
+        <img src="https://i.ibb.co/tMfyhjjJ/thumbnail.png" alt="Foto Profil Zinz Store" class="profile-pic">
+        
+        <h1 class="profile-name">Zinz Store</h1>
+        
+        <p class="profile-desc">Pusat Kebutuhan Digital & Sosial Media Anda.</p>
+
+        <div class="links-section">
+            <a href="https://zinzstoresuntiksosmed.vercel.app/" class="link-button" target="_blank"><i class="fa-solid fa-bolt"></i> Suntik Sosmed</a>
+            <a href="https://belipanel.vercel.app/" class="link-button" target="_blank"><i class="fa-solid fa-robot"></i> Panel Run Bot</a>
+            
+            <div class="section-title">Hubungi Kami</div>
+            <a href="https://chat.whatsapp.com/KF0DqKxuWCsDB8pQ6DZ5xk?mode=ac_c" class="link-button" target="_blank"><i class="fa-brands fa-whatsapp"></i> Grup WhatsApp</a>
+            <a href="https://whatsapp.com/channel/0029Vb6DpOuLdQeiiCUWJS1M" class="link-button" target="_blank"><i class="fa-solid fa-bullhorn"></i> Saluran WhatsApp</a>
+            <a href="https://wa.me/6283173432826" class="link-button" target="_blank"><i class="fa-solid fa-user-shield"></i> WhatsApp Admin</a>
+            <a href="https://wa.me/6285191317814" class="link-button" target="_blank"><i class="fa-solid fa-circle-question"></i> WhatsApp Tanya Jawab</a>
+        </div>
+
+        <div class="socials">
+             <a href="https://www.instagram.com/ditzxyad/profilecard/?igsh=MXdkM28ybmVianMzcw==" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@jhnzz57?_t=ZS-8xsx2lgQ6ro&_r=1" class="social-icon" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector("#tilt-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3
+        });
+    </script>
+
+</body>
+</html>
